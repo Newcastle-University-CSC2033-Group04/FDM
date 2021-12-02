@@ -1,0 +1,24 @@
+﻿[FORMAT]
+max-line-length = 100
+indent-string = '    '
+function-naming-style = snake_case
+argument-naming-style = snake_case
+module-naming-style = snake_case
+variable-naming-style = snake_case
+# Good variable names which should always be accepted, separated by a comma.
+good-names=i,
+           j,
+           k,
+           ex
+
+[BASIC]
+# Maximum length a method can be without a docstring.
+docstring-min-length = 15
+
+[STRING]
+# Checks for quote consistency in a file.
+check-quote-consistency = yes
+
+[SPELLING]
+# List of comma separated words that should not be checked.
+spelling-ignore-words=
