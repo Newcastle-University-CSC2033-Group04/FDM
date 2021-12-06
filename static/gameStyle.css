@@ -1,0 +1,28 @@
+.game-button {
+    background-color: #202025;
+    min-height: 300px;
+    min-width: 250px;
+    margin: 50px 50px;
+    font: verdana;
+    font-size: 30px;
+    color: aliceblue;
+    display: inline-block;
+    position: relative;
+    border: 0px;
+}
+
+#games {
+    /*The Game square centering is hard coded and should be redone properly*/
+    position: absolute;
+    background-color: transparent;
+    text-align: center;
+}
+
+
+.game-button:hover {
+    height: 350px;
+    width: 300px;
+    margin: 25px 25px;
+    color: #1daded;
+    background-color: #43434B;
+}

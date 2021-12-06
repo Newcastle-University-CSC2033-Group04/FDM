@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='gameStyle.css') }}">
+
+<div id="games">
+    <button class="game-button">Game One</button>
+    <button class="game-button">Game Two</button>
+    <button class="game-button">Game Three</button>
+    <button class="game-button">Game Four</button>
+</div>
+{% endblock %}
