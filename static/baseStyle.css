@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    border-top: 3px solid #1daded;
+    height: 60px;
+    background-color: #202025;
+    font-size: 0px;
+}
+
+.header-button {
+    font-family: verdana;
+    color: white;
+    background-color: transparent;
+    position: relative;
+    border: 0px;
+    height: 60px;
+    width: 70px;
+    float: right;
+}
+
+.header-button:hover {
+    color: #007bff;
+    background-color: aliceblue;
+}
+
