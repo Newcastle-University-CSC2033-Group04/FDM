@@ -12,10 +12,10 @@
 }
 
 #games {
-    /*The Game square centering is hard coded and should be redone properly*/
-    position: absolute;
     background-color: transparent;
     text-align: center;
+    max-width: 1000px;
+    margin: auto;
 }
 
 
