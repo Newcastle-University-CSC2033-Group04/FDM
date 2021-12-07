@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='contactStyle.css') }}">
+
+<body>
+
+  <main>
+
+  <h1> Get in Touch! </h1>
+
+  <div class="container">
+
+    <div class="address">
+      <h5>London</h5>
+      <h6>020 3056 8240</h6>
+      <h6>Cottons Centre, Cottons Lane</h6>
+      <h6>London, SE1 2QG</h6>
+    </div>
+
+    <div class="address">
+      <h5>Leeds</h5>
+      <h6>0113 331 5048</h6>
+      <h6>No.1 Whitehall Riverside</h6>
+      <h6>Leeds, West Yorkshire LS1 4BN</h6>
+    </div>
+
+    <div class="address">
+      <h5>Glasgow</h5>
+      <h6>0141 218 3100</h6>
+      <h6>1 West Regent Street, 6th Floor</h6>
+      <h6>Glasgow, G2 1RW</h6>
+    </div>
+
+  </div>
+
+  <div id="social">
+
+  </div>
+
+  </main>
+
+</body>
+{% endblock %}
