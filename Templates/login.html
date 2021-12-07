@@ -7,18 +7,14 @@
         <div class="field">
             <div class="control">
                 <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
-                {% for error in form.username.errors %}
-                                {{ error }}
-                            {% endfor %}
+
             </div>
         </div>
 
         <div class="field">
             <div class="control">
                 <input class="input is-large" type="password" name="password" placeholder="Your Password">
-                {% for error in form.password.errors %}
-                                {{ error }}
-                            {% endfor %}
+
             </div>
         </div>
 
