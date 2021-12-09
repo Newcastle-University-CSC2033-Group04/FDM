@@ -42,13 +42,52 @@ a {
 }
 
 .logo {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.twitter {
+    display: inline-block;
     width: 5%;
     height: 5%;
+    margin: 0 50px;
+}
+
+.linkedin {
     display: inline-block;
+    width: 5%;
+    height: 5%;
+    margin: 0 50px;
+}
+
+.facebook {
+    display: inline-block;
+    width: 5%;
+    height: 5%;
     margin: 0 50px;
 }
 
 .social h5 {
     font-size: 20px;
     font-family: Verdana;
+}
+
+.twitter a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.linkedin a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.facebook a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
 }
