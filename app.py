@@ -33,7 +33,10 @@ def register():
 
     if form.validate_on_submit():
         print(request.form.get('username'))
+        print(request.form.get('email'))
         print(request.form.get('password'))
+        print(request.form.get('confirm password'))
+        print(request.form.get('phone number'))
         return login()
 
     return render_template('register.html', form=form)
