@@ -1,11 +1,11 @@
 .game-button {
-    background-color: #202025;
+    background-color: var(--gray);
     min-height: 300px;
     min-width: 250px;
     margin: 50px 50px;
-    font: verdana;
+    font-family: var(--font);
     font-size: 30px;
-    color: aliceblue;
+    color: var(--white);
     display: inline-block;
     position: relative;
     border: 0px;
@@ -18,11 +18,34 @@
     margin: auto;
 }
 
+#leaderboards {
+    float: right;
+    margin-top: 50px;
+    width: 155px;
+    height: 50px;
+    color: var(--white);
+    border: 2px;
+    font-family: var(--font);
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
+
+    background-image: linear-gradient(to right, var(--gray) 50%, var(--blue) 50%);
+    background-size: 200% 200%;
+    background-position: left;
+    transition: all 400ms ease;
+}
+
+#leaderboards:hover {
+    background-position: right;
+    color: var(--white);
+}
 
 .game-button:hover {
     height: 350px;
     width: 300px;
     margin: 25px 25px;
-    color: #1daded;
+    color: var(--blue);
     background-color: #43434B;
 }

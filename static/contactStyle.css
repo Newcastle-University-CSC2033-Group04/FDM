@@ -1,7 +1,7 @@
 h1 {
     text-align: center;
-    color: #1daded;
-    font-family: Verdana;
+    color: var(--blue);
+    font-family: var(--font);
     font-size: 70px;
 }
 
@@ -36,7 +36,7 @@ a {
 .address {
     text-align: center;
     display: inline-block;
-    font-family: Verdana;
+    font-family: var(--font);
     font-size: 20px;
     margin: 0 50px;
 }
@@ -71,7 +71,7 @@ a {
 
 .social h5 {
     font-size: 20px;
-    font-family: Verdana;
+    font-family: var(--font);
 }
 
 .twitter a {
