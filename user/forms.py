@@ -16,3 +16,4 @@ class RegisterForm(FlaskForm):
     username = StringField()
     password = PasswordField()
     submit = SubmitField()
+
