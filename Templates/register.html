@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='registerStyle') }}">
+
+    <div class="column is-5 is-offset-4">
+        <h1 class="title">Register</h1>
+        <div class="box">
+            <form method="POST">
+                <div class="field">
+                    {{ form.csrf_token() }}
+                    <div class="control">
+                        {{ form.username(class="input", placeholder="Username") }}
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        {{ form.password(class="input", placeholder="email") }}
+                    </div>
+                </div>
+                 <div class="field">
+                    <div class="control">
+                        {{ form.password(class="input", placeholder="password") }}
+                    </div>
+                </div>
+                 <div class="field">
+                    <div class="control">
+                        {{ form.password(class="input", placeholder="confirm password") }}
+                    </div>
+                </div>
+                 <div class="field">
+                    <div class="control">
+                        {{ form.password(class="input", placeholder="phone number") }}
+                    </div>
+                </div>
+                <div>
+                    {{ form.submit(class="button is-info is-centered") }}
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
