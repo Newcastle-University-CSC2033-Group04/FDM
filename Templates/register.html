@@ -1,46 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='registerStyle') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='registerStyle.css') }}">
 
-    <div class="column is-5 is-offset-4">
-        <h1 class="title">Register</h1>
-        <div class="box">
-            <div method="POST">
-                <div class="field">
-                    {{ form.csrf_token() }}
-                    <div class="control">
-                        {{ form.username(class="input", placeholder="Username") }}
-                    </div>
+<div class="column is-5 is-offset-4">
+    <p class="title">Register</p>
+    <div class="box">
+        <div method="POST">
+
+            <div class="field">
+                <div class="control">
+                    {{ form.email(class="input", placeholder="Email") }}
                 </div>
-                <div class="field">
-                    <div class="control">
-                        {{ form.email(class="input", placeholder="email") }}
-                    </div>
-                </div>
-                 <div class="field">
-                    <div class="control">
-                        {{ form.password(class="input", placeholder="password") }}
-                    </div>
-                </div>
-                 <div class="field">
-                    <div class="control">
-                        {{ form.confirm_password(class="input", placeholder="confirm password") }}
-                    </div>
-                </div>
-                 <div class="field">
-                    <div class="control">
-                        {{ form.firstname(class="input", placeholder="first name") }}
-                    </div>
-                </div>
-                    <div class="control">
-                        {{ form.lastname(class="input", placeholder="last name") }}
-                    </div>
             </div>
-                    {{ form.submit(class="button is-info is-centered") }}
+
+            <div class="field">
+                {{ form.csrf_token() }}
+                <div class="control">
+                    {{ form.username(class="input", placeholder="Username") }}
                 </div>
-            </form>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    {{ form.firstname(class="input", placeholder="First name") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    {{ form.lastname(class="input", placeholder="Last name") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    {{ form.password(class="input", placeholder="Password") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    {{ form.confirm_password(class="input", placeholder="Confirm password") }}
+                </div>
+            </div>
+
+
+            <div class="field">
+                {{ form.submit(class="button is-info is-centered") }}
+            </div>
         </div>
     </div>
-
+</div>
 {% endblock %}
