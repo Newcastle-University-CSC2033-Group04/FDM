@@ -13,7 +13,11 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
+    email = StringField()
     username = StringField()
     password = PasswordField()
+    confirm_password = PasswordField()
+    firstname = StringField()
+    lastname = StringField()
     submit = SubmitField()
 
