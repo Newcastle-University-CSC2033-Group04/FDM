@@ -1,6 +1,15 @@
-#text {
-    color: #202025;
-    text-align: center;
-    font-size: 30px;
-    font-family: var(--font);
+p { /*Displays description of company in text box*/
+   font-family: verdana;
+   color: black;
+   font-size: 20px;
+   text-align: justify;
+   background-color: transparent;
+   height: 250px;
+   width: 1000px;
+   position: relative;
+   top: 70px; left: 130px;
+   border-style: solid;
+   padding: 20px;
+   border-image: linear-gradient(to right, #1daded , rebeccapurple);
+   border-image-slice: 1;
 }

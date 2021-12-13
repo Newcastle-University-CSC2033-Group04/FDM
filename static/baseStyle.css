@@ -11,7 +11,9 @@ body {
 }
 
 header {
-    border-top: 3px solid var(--blue);
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #1daded , rebeccapurple);
+    border-image-slice: 1;
     height: 60px;
     background-color: var(--gray);
     font-size: 0px;
