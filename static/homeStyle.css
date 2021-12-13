@@ -1,31 +1,3 @@
-body{
-   margin: 0;
-   background-color: #fff;
-}
-
-header{
-   border-top: 6px solid;
-   border-image: linear-gradient(to right, #1daded , rebeccapurple);
-   border-image-slice: 1;
-   height: 60px;
-   background-color: #202025;
-   font-size: 0px;
-}
-
-.header-button{
-   font-family: verdana;
-   color: white;
-   background-color: transparent;
-   position: sticky;
-   border-left: 0px;
-   border-top: 0px;
-   border-right: 0px;
-   border-bottom: 0px;
-   height: 60px;
-   width: 70px;
-   float: right;
-}
-
 p { /*Displays description of company in text box*/
    font-family: verdana;
    color: black;
@@ -35,17 +7,9 @@ p { /*Displays description of company in text box*/
    height: 250px;
    width: 1000px;
    position: relative;
-   top: 100px; left: 130px;
+   top: 70px; left: 130px;
    border-style: solid;
+   padding: 20px;
    border-image: linear-gradient(to right, #1daded , rebeccapurple);
    border-image-slice: 1;
-}
-
-.header-button:hover{
-   color: #007bff;
-   background-color: aliceblue;
-}
-
-#logo{
-   height: 60.6px;
 }
