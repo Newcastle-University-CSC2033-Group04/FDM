@@ -10,7 +10,6 @@
     position: relative;
     border: 0px;
 }
-
 #games {
     background-color: transparent;
     text-align: center;
@@ -19,30 +18,26 @@
 }
 
 #leaderboards {
+    float: right;
     right: 0;
-    top: 100px; left: 200px;
+    margin-top: 50px;
     width: 155px;
     height: 50px;
-    color: var(--white);
-    border: 2px;
-    font-family: var(--font);
-    font-size: 16px;
     display: inline-block;
     text-align: center;
     background-color: transparent;
     position: absolute;
-
+    border: 0px;
     background-image: linear-gradient(to right, var(--gray) 50%, var(--blue) 50%);
     background-size: 200% 200%;
     background-position: left;
     transition: all 400ms ease;
+    color: var(--white);
 }
-
 #leaderboards:hover {
     background-position: right;
     color: var(--white);
 }
-
 .game-button:hover {
     height: 350px;
     width: 300px;
