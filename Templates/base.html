@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,21 +13,21 @@
     <div>
         <a href="home">
             <img id="logo" height="60px"
-             src="static/images/FDM.jpg">
+                 src="static/images/FDM.jpg">
         </a>
-        <a href="login">
+        <a href="{{ url_for('users.login') }}">
             <button class="header-button">Log In</button>
         </a>
-        <a href="register">
+        <a href="{{ url_for('users.register') }}">
             <button class="header-button">Register</button>
         </a>
-        <a href="contact">
+        <a href="{{ url_for('contact') }}">
             <button class="header-button">Contact</button>
         </a>
-        <a href="games">
+        <a href="{{ url_for('games') }}">
             <button class="header-button">Games</button>
         </a>
-        <a href="home">
+        <a href="{{ url_for('home') }}">
             <button class="header-button">Home</button>
         </a>
     </div>
