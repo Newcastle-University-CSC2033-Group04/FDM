@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
 
 
 # Function used to exclude certain characters from user inputs
-def character_check(form, field):
+'''def character_check(form, field):
     excluded_chars = "*?!'^+%&/()=}][{$#@<>"
     for char in field.data:
         if char in excluded_chars:
@@ -43,5 +43,5 @@ class RegisterForm(FlaskForm):  # register form containing all the input fields
 class LoginForm(FlaskForm):  # Login form containing all the input fields
     email = StringField(validators=[DataRequired(), Email()])
     password = PasswordField(validators=[DataRequired()])
-    submit = SubmitField()
+    submit = SubmitField()'''
 
