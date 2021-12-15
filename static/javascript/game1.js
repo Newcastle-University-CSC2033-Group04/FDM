@@ -22,7 +22,7 @@ function jump() {
 var checkDead = setInterval(function(){
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-    if (blockLeft < 20 && blockLeft > 0 && characterTop >= 130) {
+    if (blockLeft < 40 && blockLeft > 0 && characterTop >= 260) {
         block.style.animation = "none";
         block.style.display = "none";
         alert("You Lose!");
