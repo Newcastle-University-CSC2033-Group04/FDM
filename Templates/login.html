@@ -7,21 +7,22 @@
     <p class="title">Login</p>
     <form method="POST" action="/login">
         <div class="field">
+            {{ form.csrf_token() }}
             <div class="control">
-                <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
+                {{ form.email(class="input", placeholder="Email") }}
 
             </div>
         </div>
 
         <div class="field">
             <div class="control">
-                <input class="input is-large" type="password" name="password" placeholder="Password">
+                {{ form.password(class="input", placeholder="Password") }}
 
             </div>
         </div>
 
         <div class="field">
-            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            {{ form.submit(class="button is-info is-centered") }}
         </div>
 
     </form>
