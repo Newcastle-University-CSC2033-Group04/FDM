@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request
 from flask_login import LoginManager
-from user.forms import RegisterForm
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
