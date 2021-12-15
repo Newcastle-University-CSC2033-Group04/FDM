@@ -4,6 +4,15 @@ from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError
 
 
+class RegisterForm(FlaskForm):  # register form containing all the input fields
+    username = StringField(validators=[DataRequired()])
+    email = StringField(validators=[DataRequired()])
+    firstname = StringField(validators=[DataRequired()])
+    lastname = StringField(validators=[DataRequired()])
+    password = PasswordField(validators=[DataRequired()])
+    confirm_password = PasswordField(validators=[DataRequired()])
+    submit = SubmitField()
+
 # Function used to exclude certain characters from user inputs
 '''def character_check(form, field):
     excluded_chars = "*?!'^+%&/()=}][{$#@<>"
@@ -13,7 +22,7 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
                 f"Character {char} is not allowed.")
 
 
-# Validators lists all the types of inputs required for the submit
+Validators lists all the types of inputs required for the submit
 class RegisterForm(FlaskForm):  # register form containing all the input fields
     username = StringField(validators=[DataRequired(), character_check])
     email = StringField(validators=[DataRequired(), Email(message='Invalid email address')])
