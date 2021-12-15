@@ -1,11 +1,10 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request
 from user.forms import RegisterForm
-from app import db
 
 users_blueprint = Blueprint('users', __name__, template_folder='Templates')
 
 
-@users_blueprint.route('/register', methods=['GET', 'POST'])
+@users_blueprint.route('/register')
 def register():
     form = RegisterForm()
 
@@ -14,9 +13,9 @@ def register():
         print(request.form.get('email'))
         print(request.form.get('password'))
         print(request.form.get('confirm password'))
-        print(request.form.get('firstname'))
-        print(request.form.get('lastname'))
-        return redirect(url_for('users.login'))
+        print(request.form.get('phone number'))
+        return login()
+
     return render_template('register.html', form=form)
 
 
