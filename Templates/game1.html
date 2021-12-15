@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+
+{% block content %}
+<html lang="en" onclick="jump()">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/game1Style.css') }}">
+
+<body>
+
+  <div id="game">
+      <div id="character"></div>
+      <div id="block"></div>
+  </div>
+
+</body>
+<script src="static/javascript/game1.js"></script>
+</html>
+{% endblock %}
