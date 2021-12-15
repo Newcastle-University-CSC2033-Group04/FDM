@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from user.forms import RegisterForm
+from user.forms import RegisterForm, LoginForm
+from app import home
 
 users_blueprint = Blueprint('users', __name__, template_folder='Templates')
 
@@ -20,9 +21,16 @@ def register():
     return render_template('register.html', form=form)
 
 
-@users_blueprint.route('/login')
+@users_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        email = request.form.get('email')
+        print(email)
+        return home()
+
+    return render_template('login.html', form=form)
 
 # TODO: previous code that was here, not sure what it does, but the above code works
 

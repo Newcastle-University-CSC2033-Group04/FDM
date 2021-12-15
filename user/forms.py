@@ -13,6 +13,13 @@ class RegisterForm(FlaskForm):  # register form containing all the input fields
     confirm_password = PasswordField(validators=[DataRequired()])
     submit = SubmitField()
 
+
+class LoginForm(FlaskForm):
+    email = StringField(validators=[DataRequired(), Email()])
+    password = PasswordField(validators=[DataRequired()])
+    submit = SubmitField()
+
+
 # Function used to exclude certain characters from user inputs
 '''def character_check(form, field):
     excluded_chars = "*?!'^+%&/()=}][{$#@<>"
@@ -53,4 +60,3 @@ class LoginForm(FlaskForm):  # Login form containing all the input fields
     email = StringField(validators=[DataRequired(), Email()])
     password = PasswordField(validators=[DataRequired()])
     submit = SubmitField()'''
-
