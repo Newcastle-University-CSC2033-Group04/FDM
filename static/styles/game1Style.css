@@ -20,6 +20,18 @@
     margin-left: 30px;
 }
 
+.hud-item {
+    position: absolute;
+    float: right;
+    right: 0;
+    margin-right: 40px;
+    margin-top: 365px;
+}
+
+.hud-prefix {
+    font-family: var(--font);
+}
+
 .animate {
     animation: jump 500ms;
 }
