@@ -4,3 +4,4 @@ WTForms
 Flask-WTF
 flask_sqlalchemy
 email-validator
+pymysql

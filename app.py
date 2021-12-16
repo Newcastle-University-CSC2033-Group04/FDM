@@ -3,8 +3,7 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-# TODO: fixes the annoying error when running the app. To be changed when working with the database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lottery.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://cs-db.ncl.ac.uk:3306/csc2033_team04'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
 
