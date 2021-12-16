@@ -1,84 +1,84 @@
 {% extends "base.html" %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/registerStyle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/registerStyle.css') }}">
 
-<div class="column is-5 is-offset-4">
-    <p class="title">Register</p>
-    <div class="box">
-        <form method="POST">
+    <div class="column is-5 is-offset-4">
+        <p class="title">Register</p>
+        <div class="box">
+            <form method="POST">
 
-            <div class="field">
-                {{ form.csrf_token() }}
-                <div class="control">
-                    {{ form.email(class="input", placeholder="Email") }}
-                    <div class="message">
-                    {% for error in form.email.errors %}
-                        {{ error }}
-                    {% endfor %}
+                <div class="field">
+                    {{ form.csrf_token() }}
+                    <div class="control">
+                        {{ form.email(class="input", placeholder="Email") }}
+                        <div class="message">
+                            {% for error in form.email.errors %}
+                                {{ error }}
+                            {% endfor %}
                         </div>
-                </div>
-            </div>
-
-            <div class="field">
-                {{ form.csrf_token() }}
-                <div class="control">
-                    {{ form.username(class="input", placeholder="Username") }}
-                    {% for error in form.username.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    {{ form.firstname(class="input", placeholder="First name") }}
-                    <div class="message">
-                    {% for error in form.firstname.errors %}
-                        {{ error }}
-                    {% endfor %}
-                        </div>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    {{ form.lastname(class="input", placeholder="Last name") }}
-                    <div class="message">
-                    {% for error in form.lastname.errors %}
-                        {{ error }}
-                    {% endfor %}
                     </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <div class="control">
-                    {{ form.password(class="input", placeholder="Password") }}
-                    <div class="message">
-                    {% for error in form.password.errors %}
-                        {{ error }}
-                    {% endfor %}
-                        </div>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    {{ form.confirm_password(class="input", placeholder="Confirm password") }}
-                    <div class="message">
-                    {% for error in form.confirm_password.errors %}
-                        {{ error }}
-                    {% endfor %}
+                <div class="field">
+                    {{ form.csrf_token() }}
+                    <div class="control">
+                        {{ form.username(class="input", placeholder="Username") }}
+                        {% for error in form.username.errors %}
+                            {{ error }}
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
+
+                <div class="field">
+                    <div class="control">
+                        {{ form.firstname(class="input", placeholder="First name") }}
+                        <div class="message">
+                            {% for error in form.firstname.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        {{ form.lastname(class="input", placeholder="Last name") }}
+                        <div class="message">
+                            {% for error in form.lastname.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        {{ form.password(class="input", placeholder="Password") }}
+                        <div class="message">
+                            {% for error in form.password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        {{ form.confirm_password(class="input", placeholder="Confirm password") }}
+                        <div class="message">
+                            {% for error in form.confirm_password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
 
 
-            <div class="field">
-                {{ form.submit(class="button is-info is-centered") }}
-        </form>
-            </div>
+                <div class="field">
+                    {{ form.submit(class="button is-info is-centered") }}
+            </form>
+        </div>
     </div>
-</div>
+    </div>
 {% endblock %}
