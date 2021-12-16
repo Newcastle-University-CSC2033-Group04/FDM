@@ -3,6 +3,14 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError
 
+class RegisterForm(FlaskForm):
+    email = StringField()
+    username = StringField()
+    password = PasswordField()
+    confirm_password = PasswordField()
+    firstname = StringField()
+    lastname = StringField()
+    submit = SubmitField()
 
 # Function used to exclude certain characters from user inputs
 '''def character_check(form, field):
