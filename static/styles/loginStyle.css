@@ -23,6 +23,12 @@
     border-bottom: 2px solid var(--blue);
 }
 
+.message{
+    color: var(--blue);
+    font-size: 18px;
+    font-family: var(--font);
+}
+
 .button {
     margin: 20px;
     height: 35px;

@@ -15,6 +15,12 @@
     margin: auto;
 }
 
+.message{
+    color: var(--blue);
+    font-size: 18px;
+    font-family: var(--font);
+}
+
 .input {
     width: 270px;
     height: 35px;
