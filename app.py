@@ -58,10 +58,18 @@ def service_unavailable(error):
 
 
 if __name__ == '__main__':
-    # TODO: commented out for now, to be returned (?) when working with the login page
-    # login_manager = LoginManager()
-    # login_manager.login_view = 'users.login'
-    # login_manager.init_app(app)
+    # sets up the login manager required for the login to work
+    login_manager = LoginManager()
+    login_manager.login_view = 'users.login'
+    login_manager.init_app(app)
+
+    from models import User
+
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
+
 
     from user.views import users_blueprint
 

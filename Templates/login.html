@@ -31,6 +31,18 @@
             </div>
 
             <div class="field">
+                <div class="message">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="notification">
+                                {{ messages[0] }}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+
+            <div class="field">
                 {{ form.submit(class="button is-info is-centered") }}
             </div>
 
