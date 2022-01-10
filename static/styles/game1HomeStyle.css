@@ -15,6 +15,7 @@ h1 {
     font-size: 70px;
     color: var(--blue);
     font-family: var(--font);
+    margin-bottom: 40px;
 }
 
 .container {
