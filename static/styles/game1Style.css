@@ -3,16 +3,29 @@
     margin: 0;
 }
 
+body {
+    min-width: 100px;
+}
+
 .choice-container {
     text-align: center;
     position: relative;
     display: flex;
-    width: 50%;
+    width: 80%;
+    border-radius: 10px;
     margin: 20px auto;
+    padding: 20px 10px;
     font-size: 30px;
-    min-width: 1000px;
+    min-width: 100px;
     background-color: var(--gray);
     color: var(--white);
+}
+
+.choice-text {
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 50px;
 }
 
 .choice-container:hover {
@@ -32,23 +45,34 @@
     background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgba(224, 11, 11, 1) 100%);
 }
 
-.hud-item {
-    position: absolute;
+#game {
+    width: 650px;
+    margin: 0 auto;
+}
+
+#hud {
+    width: 100px;
+    position: fixed;
     right: 0;
-    margin-right: 40px;
-    margin-top: 365px;
+    padding: 100px;
+}
+
+.hud-item {
+    position: relative;
+    right: 0;
+    margin-right: 100px;
+    margin-top: 0px;
 }
 
 #progressText {
     font-family: var(--font);
     position: absolute;
-    right: -10px;
     margin: 0 auto;
-    bottom: 275px;
 }
 
 .hud-prefix {
     font-family: var(--font);
+    margin-top: 100px;
 }
 
 #question {
