@@ -51,10 +51,6 @@
     font-family: var(--font);
 }
 
-.animate {
-    animation: jump 500ms;
-}
-
 #question {
     text-align: center;
     position: relative;
@@ -62,42 +58,4 @@
     font-size: 50px;
     font-family: var(--font);
     color: var(--blue);
-}
-
-#game {
-    margin: 70px auto;
-    width: 1000px;
-    height: 400px;
-    border: 1px solid black;
-    overflow: hidden;
-}
-
-#character {
-    width: 40px;
-    height: 100px;
-    background-color: red;
-    position: relative;
-    top: 300px;
-}
-
-#block {
-    width: 40px;
-    height: 40px;
-    background-color: blue;
-    position: relative;
-    top: 260px;
-    left: 960px;
-    animation: block 1s infinite linear;
-}
-
-@keyframes jump {
-    0%{top:300px;}
-    30%{top:200px;}
-    70%{top:200px;}
-    100%{top:300px;}
-}
-
-@keyframes block {
-    0%{left:960px;}
-    100%{left:-80px;}
 }
