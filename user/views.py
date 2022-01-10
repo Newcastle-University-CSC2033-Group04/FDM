@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, flash
-from flask_login import login_user, current_user
+from flask import Blueprint, render_template, flash, redirect, url_for
+from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
 from user.forms import RegisterForm, LoginForm
 from app import home, db
@@ -48,3 +48,10 @@ def login():
         return home()
 
     return render_template('login.html', form=form)
+
+
+@users_blueprint.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('home'))

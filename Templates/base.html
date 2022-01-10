@@ -15,21 +15,32 @@
             <img id="logo" height="60px"
                  src="static/images/FDM.jpg">
         </a>
-        <a href="{{ url_for('users.login') }}">
-            <button class="header-button">Log In</button>
+        <a href="{{ url_for('home') }}">
+            <button class="header-button">Home</button>
         </a>
-        <a href="{{ url_for('users.register') }}">
-            <button class="header-button">Register</button>
-        </a>
+        {% if current_user.is_authenticated %}
         <a href="{{ url_for('contact') }}">
             <button class="header-button">Contact</button>
         </a>
         <a href="{{ url_for('games') }}">
             <button class="header-button">Games</button>
         </a>
-        <a href="{{ url_for('home') }}">
-            <button class="header-button">Home</button>
+        {% endif %}
+        {%if not current_user.is_authenticated %}
+        <a href="{{ url_for('users.login') }}">
+            <button class="header-button">Log In</button>
         </a>
+        <a href="{{ url_for('users.register') }}">
+            <button class="header-button">Register</button>
+        </a>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+        <a href="{{url_for('users.logout')}}">
+            <button class="header-button">Logout</button>
+        </a>
+        {% endif %}
+
+
     </div>
 </header>
 {% block content %}
