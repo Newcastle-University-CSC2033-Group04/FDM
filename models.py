@@ -31,14 +31,14 @@ class User(db.Model, UserMixin):
 
 
 class Scores(db.Model):
-    __tablename__ = 'scores'
+    __tablename__ = 'Scores'
 
     score_id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
-    game_1 = db.Column(db.Integer, nullable=False)
-    game_2 = db.Column(db.Integer, nullable=False)
-    game_3 = db.Column(db.Integer, nullable=False)
-    game_4 = db.Column(db.Integer, nullable=False)
+    game_1 = db.Column(db.Integer, nullable=True)
+    game_2 = db.Column(db.Integer, nullable=True)
+    game_3 = db.Column(db.Integer, nullable=True)
+    game_4 = db.Column(db.Integer, nullable=True)
     
     def __init__(self, score_id, user_id, game_1, game_2, game_3, game_4):
         self.score_id = score_id
