@@ -1,21 +1,28 @@
-from flask import Flask, render_template, redirect, request
+"""
+Main module of the program. Run this file to start the program.
+
+Contains database setup, error handling, log in setup as well as references to the html templates.
+"""
+from flask import Flask, render_template, redirect
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
+# database setup
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://csc2033_team04:Rush|Cam[Fun@127.0.0.1:3307/csc2033_team04'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://csc2033_team04:Rush|Cam[Fun@' \
+                                        '127.0.0.1:3307/csc2033_team04'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
 
 db = SQLAlchemy(app)
 
 
+# html template references
 @app.route('/')
 def base():
     return redirect('home')
 
 
-# TODO: everything except base (and maybe home) to be moved out of this file
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -63,6 +70,7 @@ if __name__ == '__main__':
     login_manager.login_view = 'users.login'
     login_manager.init_app(app)
 
+    # cannot import at the top as it would cause a circular import error
     from models import User
 
 
@@ -71,6 +79,7 @@ if __name__ == '__main__':
         return User.query.get(int(id))
 
 
+    # sets up the blueprint from user.views with the app
     from user.views import users_blueprint
 
     app.register_blueprint(users_blueprint)

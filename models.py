@@ -1,9 +1,11 @@
-from app import db
-from flask_login import UserMixin
 from datetime import datetime
+from flask_login import UserMixin
 from werkzeug.security import generate_password_hash
+from app import db
 
 
+# connects the Users table to the code so data in the table can be accessed trough
+# requests in the code.
 class User(db.Model, UserMixin):
     __tablename__ = 'Users'
 
