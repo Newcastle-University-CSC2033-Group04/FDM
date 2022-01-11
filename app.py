@@ -10,7 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 # database setup
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://csc2033_team04:Rush|Cam[Fun@' \
-                                        '127.0.0.1:3307/csc2033_team04'
+                                        '127.0.0.1:3000/csc2033_team04'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
 
@@ -48,6 +48,12 @@ def game1Home():
 @login_required
 def game1():
     return render_template('game1.html')
+
+
+@app.route('/endPage')
+@login_required
+def endPage():
+    return render_template('endPage.html')
 
 
 # Error handling
