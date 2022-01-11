@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
 
 
 # Function used to exclude certain characters from user inputs
-'''def character_check(form, field):
+def character_check(form, field):
     excluded_chars = "*?!'^+%&/()=}][{$#@<>"
     for char in field.data:
         if char in excluded_chars:
@@ -13,7 +13,7 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
                 f"Character {char} is not allowed.")
 
 
-# Validators lists all the types of inputs required for the submit
+#Validators lists all the types of inputs required for the submit
 class RegisterForm(FlaskForm):  # register form containing all the input fields
     username = StringField(validators=[DataRequired(), character_check])
     email = StringField(validators=[DataRequired(), Email(message='Invalid email address')])
@@ -34,14 +34,14 @@ class RegisterForm(FlaskForm):  # register form containing all the input fields
                                   " 1 lowercase and 1 uppercase letter.")
 
     # Function to validate phone input is written in a specific format
-    def validate_phone(self, phone):
+    '''def validate_phone(self, phone):
         ph = re.compile(r'[0-9]{4}-[0-9]{3}-[0-9]{4}$')
         if not ph.match(self.phone.data):
-            raise ValidationError("Phone must be in the following format: XXXX-XXX-XXXX")
+            raise ValidationError("Phone must be in the following format: XXXX-XXX-XXXX")'''
 
 
 class LoginForm(FlaskForm):  # Login form containing all the input fields
     email = StringField(validators=[DataRequired(), Email()])
     password = PasswordField(validators=[DataRequired()])
-    submit = SubmitField()'''
+    submit = SubmitField()
 
