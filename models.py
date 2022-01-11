@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash
 from app import db
 
 
-# connects the Users table to the code so data in the table can be accessed trough
+# connects the Users table to the code so data in the table can be accessed through
 # requests in the code.
 class User(db.Model, UserMixin):
     __tablename__ = 'Users'
@@ -28,3 +28,23 @@ class User(db.Model, UserMixin):
         self.registered_on = datetime.now()
         self.last_logged_in = None
         self.current_log_in = None
+
+
+class Scores(db.Model):
+    __tablename__ = 'scores'
+
+    score_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
+    game_1 = db.Column(db.Integer, nullable=False)
+    game_2 = db.Column(db.Integer, nullable=False)
+    game_3 = db.Column(db.Integer, nullable=False)
+    game_4 = db.Column(db.Integer, nullable=False)
+    
+    def __init__(self, score_id, user_id, game_1, game_2, game_3, game_4):
+        self.score_id = score_id
+        self.user_id = user_id
+        self.game_1 = game_1
+        self.game_2 = game_2
+        self.game_3 = game_3
+        self.game_4 = game_4
+        
