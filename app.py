@@ -4,7 +4,7 @@ Main module of the program. Run this file to start the program.
 Contains database setup, error handling, log in setup as well as references to the html templates.
 """
 from flask import Flask, render_template, redirect
-from flask_login import LoginManager
+from flask_login import LoginManager, login_required
 from flask_sqlalchemy import SQLAlchemy
 
 # database setup
@@ -39,11 +39,13 @@ def contact():
 
 
 @app.route('/game1Home')
+@login_required
 def game1Home():
     return render_template('game1Home.html')
 
 
 @app.route('/game1')
+@login_required
 def game1():
     return render_template('game1.html')
 
