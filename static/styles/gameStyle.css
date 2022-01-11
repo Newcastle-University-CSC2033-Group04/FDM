@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .game-button {
     background-color: var(--gray);
     min-height: 300px;

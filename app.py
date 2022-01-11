@@ -38,6 +38,16 @@ def contact():
     return render_template('contact.html')
 
 
+@app.route('/game1Home')
+def game1Home():
+    return render_template('game1Home.html')
+
+
+@app.route('/game1')
+def game1():
+    return render_template('game1.html')
+
+
 # Error handling
 @app.errorhandler(400)
 def bad_request(error):

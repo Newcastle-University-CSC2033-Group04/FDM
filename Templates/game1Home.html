@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/game1HomeStyle.css') }}">
+
+<body>
+
+    <div id="instructions">
+        <h5>Multiple Choice Questions. Click on the right answer.</h5>
+    </div>
+
+    <div class="container">
+        <div id="home" class="flex-column flex-center">
+            <h1>Are You Ready?</h1>
+            <!-- TODO: add href to leaderboard -->
+            <a href="{{ url_for('game1') }}" class="button">Play</a>
+            <a href="" class="button">Leaderboard</a>
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}
