@@ -54,6 +54,16 @@ h1 {
     transition: all 400ms ease;
 }
 
+#saveScore{
+    font-size: 40px;
+    text-align: center;
+    min-width: 500px;
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font);
+
+}
+
 .button:hover {
     background-position: left;
     color: var(--white);
