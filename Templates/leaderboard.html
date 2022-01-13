@@ -1,0 +1,49 @@
+{% extends "base.html"%}
+
+{% block content %}
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',
+filename='styles/leaderboardStyle.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h1>Leaderboard</h1>
+    <table id="leaderboard-table">
+        <tr>
+            <th>Username</th>
+            <th>Game 1</th>
+            <th>Game 2</th>
+            <th>Game 3</th>
+        </tr>
+        <tr>
+            <td>user1</td>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>user2</td>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>user3</td>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>user4</td>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+
+{% endblock %}

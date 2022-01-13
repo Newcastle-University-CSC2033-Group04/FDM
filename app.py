@@ -55,6 +55,11 @@ def game1():
 def endPage():
     return render_template('endPage.html')
 
+@app.route('/leaderboard')
+@login_required
+def leaderboard():
+    return render_template('leaderboard.html')
+
 
 # Error handling
 @app.errorhandler(400)
