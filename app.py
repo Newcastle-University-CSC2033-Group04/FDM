@@ -58,6 +58,11 @@ def endPage():
 @app.route('/leaderboard')
 @login_required
 def leaderboard():
+    from models import Scores
+    all_scores = db.session.query(User.username, Scores.game_1, Scores.game_2, Scores.game_3, Scores.game_4).where(
+        User.id == Scores.user_id).order_by(Scores.game_1.desc(), Scores.game_2.desc())
+    for score in all_scores:
+        print(score)
     return render_template('leaderboard.html')
 
 
