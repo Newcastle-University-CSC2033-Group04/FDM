@@ -14,6 +14,7 @@ a {
     position: relative;
     border: 0px;
 }
+
 #games {
     background-color: transparent;
     text-align: center;
@@ -38,14 +39,18 @@ a {
     transition: all 400ms ease;
     color: var(--white);
 }
+
 #leaderboards:hover {
     background-position: right;
     color: var(--white);
+    cursor: pointer;
 }
+
 .game-button:hover {
     height: 350px;
     width: 300px;
     margin: 25px 25px;
     color: var(--blue);
     background-color: #43434B;
+    cursor: pointer;
 }
