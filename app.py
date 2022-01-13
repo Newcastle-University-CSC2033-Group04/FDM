@@ -59,7 +59,7 @@ def endPage():
 @app.route('/processScore/<string:userScore>', methods=['POST'])
 def processUserScore(userScore):
     userScore = json.loads(userScore)
-    print(userScore)
+    print(userScore['score'])
     return render_template('home.html')
 
 
