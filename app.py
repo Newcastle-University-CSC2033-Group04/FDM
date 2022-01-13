@@ -6,7 +6,6 @@ Contains database setup, error handling, log in setup as well as references to t
 from flask import Flask, render_template, redirect
 from flask_login import LoginManager, login_required
 from flask_sqlalchemy import SQLAlchemy
-import json
 
 # database setup
 app = Flask(__name__)
@@ -55,12 +54,6 @@ def game1():
 @login_required
 def endPage():
     return render_template('endPage.html')
-
-@app.route('/processScore/<string:userScore>', methods=['POST'])
-def processUserScore(userScore):
-    userScore = json.loads(userScore)
-    print(userScore['score'])
-    return render_template('home.html')
 
 
 # Error handling

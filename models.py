@@ -40,11 +40,10 @@ class Scores(db.Model):
     game_3 = db.Column(db.Integer, nullable=True)
     game_4 = db.Column(db.Integer, nullable=True)
     
-    def __init__(self, score_id, user_id, game_1, game_2, game_3, game_4):
-        self.score_id = score_id
+    def __init__(self, user_id):
         self.user_id = user_id
-        self.game_1 = game_1
-        self.game_2 = game_2
-        self.game_3 = game_3
-        self.game_4 = game_4
+        self.game_1 = None
+        self.game_2 = None
+        self.game_3 = None
+        self.game_4 = None
         

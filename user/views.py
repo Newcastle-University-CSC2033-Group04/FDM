@@ -8,8 +8,9 @@ from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
 from user.forms import RegisterForm, LoginForm
 from app import home, db
-from models import User
+from models import User, Scores
 from werkzeug.security import check_password_hash
+import json
 
 # creates a blueprint to be used when running the app
 users_blueprint = Blueprint('users', __name__, template_folder='Templates')
@@ -59,6 +60,19 @@ def login():
         return home()
 
     return render_template('login.html', form=form)
+
+
+# stores user score to the database
+@users_blueprint.route('/processScore/<string:user_score>', methods=['POST'])
+def process_user_score(user_score):
+    # gets data from the json file
+    user_score = json.loads(user_score)
+    # adds score to the database and saves it
+    new_score = Scores(user_id=current_user.id)
+    new_score.game_1 = user_score['score']
+    db.session.add(new_score)
+    db.session.commit()
+    return render_template('games.html')
 
 
 # logs out the  user.
