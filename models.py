@@ -37,13 +37,9 @@ class Scores(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
     game_1 = db.Column(db.Integer, nullable=True)
     game_2 = db.Column(db.Integer, nullable=True)
-    game_3 = db.Column(db.Integer, nullable=True)
-    game_4 = db.Column(db.Integer, nullable=True)
     
     def __init__(self, user_id):
         self.user_id = user_id
         self.game_1 = None
         self.game_2 = None
-        self.game_3 = None
-        self.game_4 = None
         

@@ -70,6 +70,7 @@ def process_user_score(user_score):
     # adds score to the database and saves it
     new_score = Scores(user_id=current_user.id)
     new_score.game_1 = user_score['score']
+    new_score.game_2 = 0
     db.session.add(new_score)
     db.session.commit()
     return render_template('games.html')
