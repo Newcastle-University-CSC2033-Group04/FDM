@@ -4,10 +4,8 @@ Main module of the program. Run this file to start the program.
 Contains database setup, error handling, log in setup as well as references to the html templates.
 """
 from flask import Flask, render_template, redirect
-from flask_login import LoginManager, login_required
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func
-from tabulate import tabulate
 
 # database setup
 app = Flask(__name__)
@@ -38,45 +36,6 @@ def games():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
-
-@app.route('/game1Home')
-@login_required
-def game1Home():
-    return render_template('game1Home.html')
-
-
-@app.route('/game1')
-@login_required
-def game1():
-    return render_template('game1.html')
-
-
-@app.route('/endPage')
-@login_required
-def endPage():
-    return render_template('endPage.html')
-
-
-@app.route('/leaderboard')
-@login_required
-def leaderboard():
-    from models import Scores
-    # queries all scores from the database and orders them by the sum of both scores
-    all_scores = db.session.query(User.username, Scores.game_1, Scores.game_2, Scores.game_1 + Scores.game_2).where(
-        User.id == Scores.user_id).order_by(Scores.game_1 + Scores.game_2.desc())
-    scores = []
-
-    # adds all the scores to a python list
-    for score in all_scores:
-        scores.append(list(score))
-
-    # generates an html table using the list above
-    headers = ('Username', 'Game one', 'Game two', 'Total')
-    score_table = (tabulate(scores, headers, tablefmt='html'))
-
-    # renders the leaderboard template with the scores table provided
-    return render_template('leaderboard.html', score_table=score_table)
 
 
 # Error handling
@@ -122,7 +81,9 @@ if __name__ == '__main__':
 
     # sets up the blueprint from user.views with the app
     from user.views import users_blueprint
+    from games.blueprint import games_blueprint
 
     app.register_blueprint(users_blueprint)
+    app.register_blueprint(games_blueprint)
 
     app.run(debug=True)
