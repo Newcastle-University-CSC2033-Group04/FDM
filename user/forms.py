@@ -44,3 +44,13 @@ class LoginForm(FlaskForm):
     email = StringField(validators=[DataRequired(), Email()])
     password = PasswordField(validators=[DataRequired()])
     submit = SubmitField()
+
+
+# input fields for the second game
+class GameTwoForm(FlaskForm):
+    answer1 = StringField()
+    answer2 = StringField()
+    answer3 = StringField()
+    answer4 = StringField()
+    answer5 = StringField()
+    submit = SubmitField()

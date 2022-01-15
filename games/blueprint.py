@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template
 from flask_login import current_user, login_required
-from app import db
+from app import db, games
 from models import User, Scores
 from tabulate import tabulate
 import json
+from user.forms import GameTwoForm
+from random import shuffle
 
 # creates a blueprint to be used when running the app
 games_blueprint = Blueprint('games', __name__, template_folder='Templates')
@@ -21,10 +23,38 @@ def game1():
     return render_template('game1.html')
 
 
-@games_blueprint.route('/game2')
+# questions for game two
+questions = [['Whats 1+1?', '2'],
+             ['Whats 2+2?', '4'],
+             ['Whats 3+3?', '6'],
+             ['Whats 4+4?', '8'],
+             ['Whats this module number?', 'csc2033'],
+             ['First month of the year?', 'january']]
+
+
+@games_blueprint.route('/game2', methods=['GET', 'POST'])
 @login_required
 def game2():
-    return render_template('game2.html')
+    form = GameTwoForm()
+    score = 0
+    # if submit is pressed, checks all answers
+    if form.validate_on_submit():
+        score += 50 if form.answer1.data.lower() == questions[0][1] else 0
+        score += 50 if form.answer2.data.lower() == questions[1][1] else 0
+        score += 50 if form.answer3.data.lower() == questions[2][1] else 0
+        score += 50 if form.answer4.data.lower() == questions[3][1] else 0
+        score += 50 if form.answer5.data.lower() == questions[4][1] else 0
+        print(score)
+        return games()
+    else:
+        # shuffles the questions once, once the page is loaded
+        shuffle(questions)
+    return render_template('game2.html', form=form,
+                           q1=questions[0][0],
+                           q2=questions[1][0],
+                           q3=questions[2][0],
+                           q4=questions[3][0],
+                           q5=questions[4][0])
 
 
 @games_blueprint.route('/endPage')
