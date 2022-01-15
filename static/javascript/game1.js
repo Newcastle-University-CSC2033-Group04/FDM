@@ -13,33 +13,49 @@ let availableQuestions = [];
 
 let questions = [
     {
-        question: 'What is 2 + 2?',
-        choice1: '2',
-        choice2: '4',
-        choice3: '21',
-        choice4: '17',
+        question: 'How many values do we have?',
+        choice1: '6',
+        choice2: '5',
+        choice3: '7',
+        choice4: '4',
         answer: 2,
     },
     {
-        question: 'What is 1 + 1?',
-        choice1: '2',
-        choice2: '4',
-        choice3: '21',
-        choice4: '17',
+        question: 'What is our values?',
+        choice1: 'Together we are stronger',
+        choice2: 'We make it happen',
+        choice3: 'We say how it is',
+        choice4: 'All of the above',
+        answer: 4,
+    },
+    {
+        question: 'We believe that ______ makes us stronger as one.',
+        choice1: 'Diversity',
+        choice2: 'Teamwork',
+        choice3: 'Communication',
+        choice4: 'Skill',
         answer: 1,
     },
     {
-        question: 'What is 3 + 3?',
-        choice1: '2',
-        choice2: '4',
-        choice3: '6',
-        choice4: '12',
+        question: "How do we exceed our clients' expectations?",
+        choice1: "By being committed",
+        choice2: "By being trustworthy",
+        choice3: "By being ambitious and brave",
+        choice4: "None of the above",
         answer: 3,
     },
+    {
+        question: "Which behaviour has made us the business we are today?",
+        choice1: "Open",
+        choice2: "Reliable",
+        choice3: "Trustworthy",
+        choice4: "All of the above",
+        answer: 4,
+    }
 ]
 
-const SCORE_POINTS = 100;
-const MAX_QUESTIONS = 3;
+const SCORE_POINTS = 50;
+const MAX_QUESTIONS = 5;
 
 startGame = () => {
     questionCounter = 0;
