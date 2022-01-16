@@ -15,7 +15,8 @@
 }
 
 .input {
-    width: 270px;
+    margin-bottom: 10px;
+    width: 700px;
     height: 35px;
     background-color: transparent;
     font-size: 18px;
@@ -25,7 +26,7 @@
 
 .question {
     margin-top: 12px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     color: var(--blue);
     font-size: 18px;
     font-family: var(--font);

@@ -24,12 +24,16 @@ def game1():
 
 
 # questions for game two
-questions = [['Whats 1+1?', '2'],
-             ['Whats 2+2?', '4'],
-             ['Whats 3+3?', '6'],
-             ['Whats 4+4?', '8'],
-             ['Whats this module number?', 'csc2033'],
-             ['First month of the year?', 'january']]
+questions = [['FDM _____ graduates, ex-forces personnel, etc, '
+              'to become IT professionals.', 'trains'],
+             ['How many high-profile clients worldwide do we '
+              'partner with?', '200+'],
+             ['Approximately, how many graduates do we employ '
+              'each year?', '1000'],
+             ['We have a median gender pay gap of ___%', '0'],
+             ['In the Social Mobility Index, we are ranked as top ___ '
+              'employers.', '50'],
+             ['We are a _____, multi award-winning employer.', 'FTSE 250']]
 
 
 @games_blueprint.route('/game2', methods=['GET', 'POST'])
