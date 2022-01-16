@@ -12,7 +12,8 @@
 <body>
     <div class="container">
         <div id="end" class="flex-center flex-column">
-            <h1 id="scoreboard">{{ score }}</h1>
+            <h5>You answered {{ correct }} question(s) correctly</h5>
+            <h1 id="scoreboard"> Score: {{ score }}</h1>
             <form class="end-form-container">
                 <div class="button">
                     <a href="/saveScore/{{ score }}" id="saveScore" type="submit">

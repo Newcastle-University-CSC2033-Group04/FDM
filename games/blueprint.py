@@ -33,7 +33,7 @@ questions = [['FDM _____ graduates, ex-forces personnel, etc, '
              ['We have a median gender pay gap of ___%', '0'],
              ['In the Social Mobility Index, we are ranked as top ___ '
               'employers.', '50'],
-             ['We are a _____, multi award-winning employer.', 'FTSE 250']]
+             ['We are a _____, multi award-winning employer.', 'ftse 250']]
 
 
 @games_blueprint.route('/game2', methods=['GET', 'POST'])
@@ -48,7 +48,7 @@ def game2():
         score += 50 if form.answer3.data.lower() == questions[2][1] else 0
         score += 50 if form.answer4.data.lower() == questions[3][1] else 0
         score += 50 if form.answer5.data.lower() == questions[4][1] else 0
-        return render_template("endPage2.html", score=score)
+        return render_template("endPage2.html", correct=int(score/50), score=score)
     else:
         # shuffles the questions once, once the page is loaded
         shuffle(questions)
