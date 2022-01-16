@@ -48,8 +48,7 @@ def game2():
         score += 50 if form.answer3.data.lower() == questions[2][1] else 0
         score += 50 if form.answer4.data.lower() == questions[3][1] else 0
         score += 50 if form.answer5.data.lower() == questions[4][1] else 0
-        print(score)
-        return games()
+        return render_template("endPage2.html", score=score)
     else:
         # shuffles the questions once, once the page is loaded
         shuffle(questions)
@@ -61,10 +60,34 @@ def game2():
                            q5=questions[4][0])
 
 
+@games_blueprint.route('/game2Home')
+@login_required
+def game2Home():
+    return render_template('game2Home.html')
+
+
 @games_blueprint.route('/endPage')
 @login_required
 def endPage():
     return render_template('endPage.html')
+
+
+@games_blueprint.route('/saveScore/<score>')
+def saveScore(score):
+    # gets the score data of the current user
+    last_score = Scores.query.filter_by(user_id=current_user.id).first()
+    # if user has no score in the database, adds new score
+    if not last_score:
+        new_score = Scores(user_id=current_user.id)
+        new_score.game_1 = 0
+        new_score.game_2 = score
+        db.session.add(new_score)
+    # if new score is greater than the last, it's stored in the database
+    elif last_score.game_2 < int(score):
+        last_score.game_2 = score
+
+    db.session.commit()
+    return render_template('games.html')
 
 
 # stores user score to the database
@@ -72,11 +95,19 @@ def endPage():
 def process_user_score(user_score):
     # gets data from the json file
     user_score = json.loads(user_score)
-    # adds score to the database and saves it
-    new_score = Scores(user_id=current_user.id)
-    new_score.game_1 = user_score['score']
-    new_score.game_2 = 0
-    db.session.add(new_score)
+
+    # gets the score data of the current user
+    last_score = Scores.query.filter_by(user_id=current_user.id).first()
+    # if user has no score in the database, adds new score
+    if not last_score:
+        new_score = Scores(user_id=current_user.id)
+        new_score.game_1 = user_score['score']
+        new_score.game_2 = 0
+        db.session.add(new_score)
+    # if new score is greater than the last, it's stored in the database
+    elif last_score.game_1 < int(user_score['score']):
+        last_score.game_1 = user_score['score']
+
     db.session.commit()
     return render_template('games.html')
 
