@@ -1,3 +1,12 @@
+.boundary {
+   position: absolute;
+   left: 50%;
+   text-align: center;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   padding: 10px;
+}
+
 p { /*Displays description of company in text box*/
    font-family: verdana;
    color: black;
@@ -6,8 +15,7 @@ p { /*Displays description of company in text box*/
    background-color: transparent;
    height: 250px;
    width: 1000px;
-   position: relative;
-   top: 70px; left: 130px;
+   margin: 20px auto;
    border-style: solid;
    padding: 20px;
    border-image: linear-gradient(to right, #1daded , rebeccapurple);

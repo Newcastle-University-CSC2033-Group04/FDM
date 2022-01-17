@@ -37,5 +37,6 @@ header {
 .header-button:hover {
     color: var(--blue);
     background-color: var(--white);
+    cursor: pointer;
 }
 

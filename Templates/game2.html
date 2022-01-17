@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/game2Style.css') }}">
+
+    <div class="column is-4 is-offset-4">
+        <p class="title">Short Answers</p>
+        <form method="POST">
+            <div class="field">
+                {{ form.csrf_token() }}
+                <p class="question">{{ q1 }}</p>
+                <div class="control">
+                    {{ form.answer1(class="input", placeholder="Answer") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <p class="question">{{ q2 }}</p>
+                <div class="control">
+                    {{ form.answer2(class="input", placeholder="Answer") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <p class="question">{{ q3 }}</p>
+                <div class="control">
+                    {{ form.answer3(class="input", placeholder="Answer") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <p class="question">{{ q4 }}</p>
+                <div class="control">
+                    {{ form.answer4(class="input", placeholder="Answer") }}
+                </div>
+            </div>
+
+            <div class="field">
+                <p class="question">{{ q5 }}</p>
+                <div class="control">
+                    {{ form.answer5(class="input", placeholder="Answer") }}
+                </div>
+            </div>
+
+
+            <div class="field">
+                {{ form.submit(class="button is-info is-centered") }}
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}

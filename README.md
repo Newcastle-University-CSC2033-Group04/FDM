@@ -1,63 +1,51 @@
-# FDM
-FDM Group: Brand Game
-COmpany logo. The Letters FDM then a star at the top-right of the letter M
+FDM
+===
 
-Gamification of FDM’s Branding
-Overview 
-The current pandemic has put more of a focus on the digital profile of FDM to attract current students and graduates to apply to its’ Graduate Programme.  Work is being done to update the student and graduate webpages to make them more interactive and engaging.  As a part of this work, we would like to provide an interactive way for students to find out more about the different technical streams that they could apply to. 
+### Program
+The program is a gamified version of the FDM website. It allows users to register for 
+an account; once logged in, users can access the games page, where they are presented 
+with games to choose from and the leaderboard, where user high scores are displayed.
 
- 
+### Running the program
+Please install any missing libraries from the `requirements.txt` file before running the 
+program. The program will run without connecting to the database, but most functionality
+will be disabled as it is directly linked to the database. For instructions on how to connect
+to the databse, see the `Database` section below.  
+To start the program, simply run `app.py` and you will be presented with a link to the
+website.
 
-Client  
-FDM is a diverse global leader in the Recruit, Train & Deploy sector as an IT consultancy provider, employing graduates, ex-forces and returners to work. FDM provides award winning IT training and places consultants’ onsite with our clients. FDM is looking to gamify the new rebranded vision, mission and values so that employees will engage and remember the information.
+### Program structure
+The program consists of multiple files, the main one being `app.py`. This file 
+calls functions from other modules as well as references HTML templates in the 
+`Templates` folder. This folder in turn references items from the `static` folder, 
+where images and CSS files are contained. `app.py` is extended by other python files, such as 
+`games/bluepirnts.py` and `user/views.py` where most of the program's functionality is handled,
+including login, leaderboards and games.
 
- 
+### Database
+The provided MariaBD database was used in the project.  
+The program is set up using the localhost in the program, as there were issues with
+the remote host.  
+##### - Connection  
+To connect to the database, simply use team_4 login details in the `Database` tab of the IDE; 
+the SSH should be using the Local port `3333`. This port is used in the code and thus can not
+be different.
+##### - Layout
+The database consists of two tables: `Users` and `Scores`. The `Users` table stores all 
+necessary user data, including login details and personal information. The `Scores` table is 
+linked to the `Users` table via a foreign key. This table stores all scores from all users and
+is used when generating the leaderboard.
 
-Gamification 
-Gamification is the application of typical game features to other areas of activity. This could include point scoring, competition with others and having rules of play. Usually activities or processes are gamified in order to retain and engage employees, increase their loyalty to the business and encourages engagement with the material they are using. Gamification can be used across various industries as well as different departments including learning and development, recruitment, marketing and sales.
+### Repository
+All project files can be found using the following link:  
+https://github.com/Newcastle-University-CSC2033-Group04/FDM
 
- 
+### Program Authors
+Program developed by Team 4:  
+• Charlotte Bale  
+• Benas Bulota  
+• Yuan Liu  
+• William Moses  
+• Abdulla Rashed
 
-Requirements 
-As this project will be managed through a product backlog there are no fixed requirements. The stories for this project will be discovered and adjusted throughout. However, an initial set of stories will be based on the following key features. These will be elaborated upon, split up, adjusted and added to.
-
-Gamify the different components of the FDM branding. 
-E.g., values can be multiple-choice selections. 
-Blocks of text could be made into puzzle pieces to put back together. 
-Largely the mini-games will be left up to your discretion. 
-There should be a scoring system or leader board 
-People can choose which section of the branding they want to work on and will be given the choice of the games to play. 
-Each of the value games can be no longer than 2 minutes to complete. 
-The new FDM colour palette should be used throughout the game as well as the FDM Astra where possible. 
-  
-
-Additional Features 
-New features will be discovered and agreed during the project. The following are possible future features: 
-
-Tweet results under our twitter handle  #FDMCareers 
- 
-
-Key Non-Functional Requirements 
-While all projects must consider a balance of performance, security, usability and appearance, the key non-functional requirement that must be included within the definition of done for this project is: 
-
-Functionality: This app is likely to include many individual components that need to work smoothly with each other and operate on a variety of devices. 
-
- 
-
-Supporting Information  
-The different streams that we would like to initially gamify are:
-
-Software Testing
-Business Intelligence
-Technical Operations
- 
-
-Social Media Links: 
-
-https://www.linkedin.com/company/fdm-group (Links to an external site.) 
-
-https://www.facebook.com/FDMGroup/ (Links to an external site.) 
-
-https://twitter.com/FDMGroup (Links to an external site.) 
-
-https://www.youtube.com/user/FDMGroupVideos
+Newcastle, 2022

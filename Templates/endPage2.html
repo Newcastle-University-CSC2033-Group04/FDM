@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',
+    filename='styles/game1HomeStyle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h5>You answered {{ correct }} question(s) correctly</h5>
+            <h1 id="scoreboard"> Score: {{ score }}</h1>
+            <form class="end-form-container">
+                <div class="button">
+                    <a href="/saveScore/{{ score }}" id="saveScore" type="submit">
+                        Save Score
+                    </a>
+                </div>
+            </form>
+            <a href="/game2" class="button">Play Again</a>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
