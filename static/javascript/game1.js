@@ -1,4 +1,4 @@
-// Questions
+// Questions JavaScript
 
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
@@ -11,6 +11,7 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+// Available questions
 let questions = [
     {
         question: 'How many values do we have?',
@@ -54,6 +55,7 @@ let questions = [
     }
 ]
 
+// 50 points will be granted for every correct answer
 const SCORE_POINTS = 50;
 const MAX_QUESTIONS = 5;
 
@@ -64,6 +66,7 @@ startGame = () => {
     getNewQuestion();
 }
 
+// A function to generate a new question in random after the user answers the current question.
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
