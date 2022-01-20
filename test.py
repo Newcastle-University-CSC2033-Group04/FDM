@@ -4,32 +4,10 @@ from user import views
 from flask_login import current_user, login_user
 from models import User
 import unittest
-from user import forms
+from user.forms import RegisterForm, LoginForm
 from flask import Flask
-
-
-class UserModelTestCase(unittest.TestCase):
-    def setUp(self):
-        self.app = Flask(__name__)
-        self.app_ctx = self.app.app_context()
-        self.app_ctx.push()
-        self.client = self.app.test_client()
-        db.create_all()
-        User.register('Tester', 'Tester123*')
-
-    def tearDown(self):
-        db.drop_all()
-        self.app_ctx.pop()
-
-    def test_login(self):
-        r = self.client.get('/login')
-        self.assertEqual(r.status_code, 200)
-        self.assertTrue('<h1>login</h1>' in r.get_data(as_text=True))
-        r = self.client.post('/login',
-                             data={'username': 'Test@user.com', 'password': 'Tester123*'},
-                             follow_redirects=True)
-        self.assertEqual(r.status_code, 200)
-        self.assertTrue(('<h1>home page</h1>' in r.get_data(as_text=True)))
+import os
+import tempfile
 
 
 class FlaskTestCase(unittest.TestCase):
@@ -44,32 +22,7 @@ class FlaskTestCase(unittest.TestCase):
         assert user.email == 'test@user.com'
         assert user.password != 'Tester123*'
 
-    '''def test_user_registration(self):
-        with self.client:
-            response = self.register.post(
-                '/register', data=dict(
-                    username="Tester",
-                    email="test@user.com",
-                    password="Tester123*",
-                    confirm_password='Tester123*',
-                    first_name="Test",
-                    last_name="Test"), follow_redirects=True
-            )
-            self.assertIn('Registered', response.data)
-            self.assertTrue(current_user.name == "test@user.com")
-            self.assertTrue(current_user.is_active())'''
-
-    '''def test_login_page_loads(self):
-        tester = app.test_client(self)
-        response = tester.get('/login', content_type='html/text')
-        self.assertTrue('login' in response.data)
-
-    def test_valid_registration(self):
-        response = self.register('test@user.com', 'Tester123*')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn('You are logged in')'''
-
-    '''# Ensures that Flask was set up correctly
+    # Ensures that Flask was set up correctly
     def test_home(self):
         tester = app.test_client(self)
         response = tester.get('/base', content_type='html/text')
@@ -115,7 +68,7 @@ class FlaskTestCase(unittest.TestCase):
     def test_incorrect_register(self):
         tester = app.test_client(self)
         response = tester.post('/register', data=dict(username='Tester', password='Tester123*'), follow_redirects=True)
-        self.assertIn('validation errors' in response.data)'''
+        self.assertIn('validation errors' in response.data)
 
 
 if __name__ == '__main__':
